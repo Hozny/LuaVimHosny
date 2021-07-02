@@ -32,4 +32,5 @@ w.cursorline = true -- Enable highlighting of the current line
 o.updatetime = 300 -- Faster completion
 o.clipboard = "unnamedplus" -- Copy paste between vim and everything else
 vim.cmd('colorscheme ' .. O.colorscheme)
+vim.o.completeopt = "menuone,noselect"
 

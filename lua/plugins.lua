@@ -60,10 +60,28 @@ return require("packer").startup(function(use)
     -- Debugging
     use {"mfussenegger/nvim-dap", opt = true}
 
+    -- Snap
+    use {
+        "camspiers/snap",
+        rocks = "fzy",
+        config = function()
+          require("hzny-snap").config()
+        end,
+        disable = not O.plugin.snap.active,
+    }
     -- Autocomplete
-    use {"hrsh7th/nvim-compe", opt = true}
+    use {
+        "hrsh7th/nvim-compe",
+        config = function()
+            require("hzny-compe").config()
+        end
+    }
     use {"hrsh7th/vim-vsnip", opt = true}
     use {"rafamadriz/friendly-snippets", opt = true}
+    require_plugin("nvim-compe")
+
+     -- whichkey
+    use {"folke/which-key.nvim"}
 
     -- Treesitter
     use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
@@ -71,13 +89,15 @@ return require("packer").startup(function(use)
     use {'andymass/vim-matchup', opt = true}
     require_plugin("nvim-treesitter")
     require_plugin("nvim-ts-autotag")
-    require_plugin('vim-matchup')
+    require_plugin("vim-matchup")
+
+    -- Nvim Tree
+    use {"kyazdani42/nvim-tree.lua"}
 
     -- Explorer
-    use {"kyazdani42/nvim-tree.lua", opt = true}
     use {"ahmedkhalf/lsp-rooter.nvim", opt = true} -- with this nvim-tree will follow you
     -- TODO remove when open on dir is supported by nvimtree
-    require_plugin("nvim-tree.lua")   use "kevinhwang91/rnvimr"
+    use "kevinhwang91/rnvimr"
 
     -- Themes
     use {"morhetz/gruvbox", opt = true}
