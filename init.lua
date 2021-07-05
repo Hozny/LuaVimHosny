@@ -8,6 +8,7 @@ require('lsp')
 require('hzny-telescope')
 require('hzny-lspinstall')
 require('hzny-whichkey')
+require('hzny-treesitter')
 
 -- LSP setups
 require('lsp.python-ls')

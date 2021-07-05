@@ -16,6 +16,14 @@ O = {
 	timeoutlen = 100,
     nvim_tree_disable_netrw = 0,
     extras = false,
+
+    treesitter = {
+        ensure_installed = "all",
+        ignore_install = { "haskell" },
+        highlight = { enabled = true },
+        rainbow = { enabled = false },
+    },
+
     lang = {
         python = {
             linter = '',

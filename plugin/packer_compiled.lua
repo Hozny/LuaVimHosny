@@ -69,6 +69,10 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["astronauta.nvim"] = {
+    loaded = true,
+    path = "/home/yousof/.local/share/nvim/site/pack/packer/start/astronauta.nvim"
+  },
   ["friendly-snippets"] = {
     loaded = false,
     needs_bufread = false,
@@ -156,6 +160,8 @@ _G.packer_plugins = {
     path = "/home/yousof/.local/share/nvim/site/pack/packer/opt/telescope-project.nvim"
   },
   ["telescope.nvim"] = {
+    commands = { "Telescope" },
+    config = { "require('lv-telescope')" },
     loaded = false,
     needs_bufread = false,
     path = "/home/yousof/.local/share/nvim/site/pack/packer/opt/telescope.nvim"
@@ -187,6 +193,12 @@ time([[Defining packer_plugins]], false)
 time([[Config for nvim-compe]], true)
 try_loadstring("\27LJ\2\0029\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\vconfig\15hzny-compe\frequire\0", "config", "nvim-compe")
 time([[Config for nvim-compe]], false)
+
+-- Command lazy-loads
+time([[Defining lazy-load commands]], true)
+vim.cmd [[command! -nargs=* -range -bang -complete=file Telescope lua require("packer.load")({'telescope.nvim'}, { cmd = "Telescope", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
+time([[Defining lazy-load commands]], false)
+
 if should_profile then save_profiles() end
 
 end)

@@ -45,13 +45,20 @@ return require("packer").startup(function(use)
     -- Telescope
     use {"nvim-lua/popup.nvim", opt = true}
     use {"nvim-lua/plenary.nvim", opt = true}
-    use {"nvim-telescope/telescope.nvim", opt = true}
+    use { "tjdevries/astronauta.nvim" }
+    use {
+        "nvim-telescope/telescope.nvim",
+        config = [[require('lv-telescope')]],
+        cmd = "Telescope",
+   }
     use {"nvim-telescope/telescope-fzy-native.nvim", opt = true}
     use {"nvim-telescope/telescope-project.nvim", opt = true}
+
     require_plugin("popup.nvim")
     require_plugin("plenary.nvim")
     require_plugin("telescope.nvim")
-    require_plugin('telescope-project.nvim')
+    require_plugin("telescope-project.nvim")
+    require_plugin("austronata.nvim")
 
     -- Icons
     use {"kyazdani42/nvim-web-devicons", opt = true}
@@ -87,17 +94,24 @@ return require("packer").startup(function(use)
     use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
     use {"windwp/nvim-ts-autotag", opt = true}
     use {'andymass/vim-matchup', opt = true}
+    require_plugin("snap")
+    require_plugin("vim-vsnip")
+    require_plugin("friendly-snippets")
+    require_plugin("which-key")
     require_plugin("nvim-treesitter")
     require_plugin("nvim-ts-autotag")
     require_plugin("vim-matchup")
 
     -- Nvim Tree
     use {"kyazdani42/nvim-tree.lua"}
+    require_plugin("nvim-tree.lua")
 
     -- Explorer
     use {"ahmedkhalf/lsp-rooter.nvim", opt = true} -- with this nvim-tree will follow you
+    require_plugin("lsp-rooter.nvim")
     -- TODO remove when open on dir is supported by nvimtree
     use "kevinhwang91/rnvimr"
+    require_plugin("rnvimr")
 
     -- Themes
     use {"morhetz/gruvbox", opt = true}
