@@ -26,6 +26,22 @@ local function require_plugin(plugin)
     return ok, err, code
 end
 
+local packer_ok, packer = pcall(require, "packer")
+if not packer_ok then
+  return
+end
+
+packer.init {
+  -- compile_path = vim.fn.stdpath('data')..'/site/pack/loader/start/packer.nvim/plugin/packer_compiled.vim',
+  compile_path = require("packer.util").join_paths(vim.fn.stdpath "config", "plugin", "packer_compiled.vim"),
+  git = { clone_timeout = 300 },
+  display = {
+    open_fn = function()
+      return require("packer.util").float { border = "single" }
+    end,
+  },
+}
+
 vim.cmd("autocmd BufWritePost plugins.lua PackerCompile") -- Auto compile when there are changes in plugins.lua
 
 return require("packer").startup(function(use)
@@ -37,11 +53,13 @@ return require("packer").startup(function(use)
     use {"glepnir/lspsaga.nvim", opt = true}
     use {"kabouzeid/nvim-lspinstall", opt = true}
     use {"folke/trouble.nvim", opt = true}
+    --[[
     require_plugin("nvim-lspconfig")
     require_plugin("lspsaga.nvim")
     require_plugin("nvim-lspinstall")
     require_plugin("trouble.nvim")
- 
+    --]]
+         
     -- Telescope
     use {"nvim-lua/popup.nvim", opt = true}
     use {"nvim-lua/plenary.nvim", opt = true}
@@ -54,11 +72,13 @@ return require("packer").startup(function(use)
     use {"nvim-telescope/telescope-fzy-native.nvim", opt = true}
     use {"nvim-telescope/telescope-project.nvim", opt = true}
 
+    --[[
     require_plugin("popup.nvim")
     require_plugin("plenary.nvim")
     require_plugin("telescope.nvim")
     require_plugin("telescope-project.nvim")
     require_plugin("austronata.nvim")
+    --]]
 
     -- Icons
     use {"kyazdani42/nvim-web-devicons", opt = true}
@@ -85,7 +105,7 @@ return require("packer").startup(function(use)
     }
     use {"hrsh7th/vim-vsnip", opt = true}
     use {"rafamadriz/friendly-snippets", opt = true}
-    require_plugin("nvim-compe")
+    --require_plugin("nvim-compe")
 
      -- whichkey
     use {"folke/which-key.nvim"}
@@ -112,6 +132,23 @@ return require("packer").startup(function(use)
     -- TODO remove when open on dir is supported by nvimtree
     use "kevinhwang91/rnvimr"
     require_plugin("rnvimr")
+
+   use {
+        "lewis6991/gitsigns.nvim",
+        config = function()
+          require("hzny-gitsigns").config()
+        end,
+        event = "BufRead",
+    }
+
+    -- Comments
+    use {
+        "terrortylor/nvim-comment",
+        cmd = "CommentToggle",
+        config = function()
+          require("nvim_comment").setup()
+        end,
+    }
 
     -- Themes
     use {"morhetz/gruvbox", opt = true}

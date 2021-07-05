@@ -1,14 +1,17 @@
--- Automatically generated packer.nvim plugin loader code
+" Automatically generated packer.nvim plugin loader code
 
-if vim.api.nvim_call_function('has', {'nvim-0.5'}) ~= 1 then
-  vim.api.nvim_command('echohl WarningMsg | echom "Invalid Neovim version for packer.nvim! | echohl None"')
-  return
-end
+if !has('nvim-0.5')
+  echohl WarningMsg
+  echom "Invalid Neovim version for packer.nvim!"
+  echohl None
+  finish
+endif
 
-vim.api.nvim_command('packadd packer.nvim')
+packadd packer.nvim
 
-local no_errors = pcall(function()
+try
 
+lua << END
   local time
   local profile_info
   local should_profile = false
@@ -78,6 +81,12 @@ _G.packer_plugins = {
     needs_bufread = false,
     path = "/home/yousof/.local/share/nvim/site/pack/packer/opt/friendly-snippets"
   },
+  ["gitsigns.nvim"] = {
+    config = { "\27LJ\2\2<\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\vconfig\18hzny-gitsigns\frequire\0" },
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/yousof/.local/share/nvim/site/pack/packer/opt/gitsigns.nvim"
+  },
   gruvbox = {
     loaded = false,
     needs_bufread = false,
@@ -92,6 +101,13 @@ _G.packer_plugins = {
     loaded = false,
     needs_bufread = false,
     path = "/home/yousof/.local/share/nvim/site/pack/packer/opt/lspsaga.nvim"
+  },
+  ["nvim-comment"] = {
+    commands = { "CommentToggle" },
+    config = { "\27LJ\2\2:\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\17nvim_comment\frequire\0" },
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/yousof/.local/share/nvim/site/pack/packer/opt/nvim-comment"
   },
   ["nvim-compe"] = {
     config = { "\27LJ\2\0029\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\vconfig\15hzny-compe\frequire\0" },
@@ -197,12 +213,23 @@ time([[Config for nvim-compe]], false)
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
 vim.cmd [[command! -nargs=* -range -bang -complete=file Telescope lua require("packer.load")({'telescope.nvim'}, { cmd = "Telescope", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
+vim.cmd [[command! -nargs=* -range -bang -complete=file CommentToggle lua require("packer.load")({'nvim-comment'}, { cmd = "CommentToggle", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
 time([[Defining lazy-load commands]], false)
 
+vim.cmd [[augroup packer_load_aucmds]]
+vim.cmd [[au!]]
+  -- Event lazy-loads
+time([[Defining lazy-load event autocommands]], true)
+vim.cmd [[au BufRead * ++once lua require("packer.load")({'gitsigns.nvim'}, { event = "BufRead *" }, _G.packer_plugins)]]
+time([[Defining lazy-load event autocommands]], false)
+vim.cmd("augroup END")
 if should_profile then save_profiles() end
 
-end)
+END
 
-if not no_errors then
-  vim.api.nvim_command('echohl ErrorMsg | echom "Error in packer_compiled: ".v:exception | echom "Please check your config for correctness" | echohl None')
-end
+catch
+  echohl ErrorMsg
+  echom "Error in packer_compiled: " .. v:exception
+  echom "Please check your config for correctness"
+  echohl None
+endtry
