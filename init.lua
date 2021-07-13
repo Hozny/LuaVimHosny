@@ -5,10 +5,10 @@ require('settings')
 require('keymaps')
 
 require('lsp')
-require('hzny-telescope')
-require('hzny-lspinstall')
-require('hzny-whichkey')
-require('hzny-treesitter')
+require('config.hzny-telescope')
+require('config.hzny-lspinstall')
+require('config.hzny-whichkey')
+require('config.hzny-treesitter')
 
 -- LSP setups
 require('lsp.python-ls')

@@ -53,12 +53,10 @@ return require("packer").startup(function(use)
     use {"glepnir/lspsaga.nvim", opt = true}
     use {"kabouzeid/nvim-lspinstall", opt = true}
     use {"folke/trouble.nvim", opt = true}
-    --[[
     require_plugin("nvim-lspconfig")
     require_plugin("lspsaga.nvim")
     require_plugin("nvim-lspinstall")
     require_plugin("trouble.nvim")
-    --]]
          
     -- Telescope
     use {"nvim-lua/popup.nvim", opt = true}
@@ -72,13 +70,11 @@ return require("packer").startup(function(use)
     use {"nvim-telescope/telescope-fzy-native.nvim", opt = true}
     use {"nvim-telescope/telescope-project.nvim", opt = true}
 
-    --[[
     require_plugin("popup.nvim")
     require_plugin("plenary.nvim")
     require_plugin("telescope.nvim")
     require_plugin("telescope-project.nvim")
     require_plugin("austronata.nvim")
-    --]]
 
     -- Icons
     use {"kyazdani42/nvim-web-devicons", opt = true}
@@ -92,7 +88,7 @@ return require("packer").startup(function(use)
         "camspiers/snap",
         rocks = "fzy",
         config = function()
-          require("hzny-snap").config()
+          require("config.hzny-snap").config()
         end,
         disable = not O.plugin.snap.active,
     }
@@ -100,7 +96,7 @@ return require("packer").startup(function(use)
     use {
         "hrsh7th/nvim-compe",
         config = function()
-            require("hzny-compe").config()
+            require("config.hzny-compe").config()
         end
     }
     use {"hrsh7th/vim-vsnip", opt = true}
@@ -136,7 +132,7 @@ return require("packer").startup(function(use)
    use {
         "lewis6991/gitsigns.nvim",
         config = function()
-          require("hzny-gitsigns").config()
+          require("config.hzny-gitsigns").config()
         end,
         event = "BufRead",
     }

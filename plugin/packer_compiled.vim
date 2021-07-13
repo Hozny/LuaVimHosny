@@ -82,7 +82,7 @@ _G.packer_plugins = {
     path = "/home/yousof/.local/share/nvim/site/pack/packer/opt/friendly-snippets"
   },
   ["gitsigns.nvim"] = {
-    config = { "\27LJ\2\2<\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\vconfig\18hzny-gitsigns\frequire\0" },
+    config = { "\27LJ\2\2C\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\vconfig\25config.hzny-gitsigns\frequire\0" },
     loaded = false,
     needs_bufread = false,
     path = "/home/yousof/.local/share/nvim/site/pack/packer/opt/gitsigns.nvim"
@@ -110,7 +110,7 @@ _G.packer_plugins = {
     path = "/home/yousof/.local/share/nvim/site/pack/packer/opt/nvim-comment"
   },
   ["nvim-compe"] = {
-    config = { "\27LJ\2\0029\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\vconfig\15hzny-compe\frequire\0" },
+    config = { "\27LJ\2\2@\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\vconfig\22config.hzny-compe\frequire\0" },
     loaded = true,
     path = "/home/yousof/.local/share/nvim/site/pack/packer/start/nvim-compe"
   },
@@ -207,7 +207,7 @@ _G.packer_plugins = {
 time([[Defining packer_plugins]], false)
 -- Config for: nvim-compe
 time([[Config for nvim-compe]], true)
-try_loadstring("\27LJ\2\0029\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\vconfig\15hzny-compe\frequire\0", "config", "nvim-compe")
+try_loadstring("\27LJ\2\2@\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\vconfig\22config.hzny-compe\frequire\0", "config", "nvim-compe")
 time([[Config for nvim-compe]], false)
 
 -- Command lazy-loads
