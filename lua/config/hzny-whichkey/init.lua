@@ -62,7 +62,7 @@ vim.api.nvim_set_keymap('n', '<Leader>nh', ':let @/=""<CR>',
 
 -- TODO this introduces some bugs unfortunately
 vim.api.nvim_set_keymap('n', '<Leader>e',
-                        ":lua require'config.hzny-nvimtree'.toggle_tree()",
+                        ":lua require'config.hzny-nvimtree'.toggle_tree()<CR>",
                         {noremap = true, silent = true})
 -- vim.api.nvim_set_keymap('n', '<Leader>e',
 --                         ":NvimTreeToggle<CR>",

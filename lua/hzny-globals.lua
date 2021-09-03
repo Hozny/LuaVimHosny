@@ -3,6 +3,7 @@ DATA_PATH = vim.fn.stdpath('data')
 CACHE_PATH = vim.fn.stdpath('cache')
 
 O = {
+    leader_key = ' ',
     colorscheme = 'gruvbox',
 
     auto_close_tree = 0,
@@ -23,14 +24,13 @@ O = {
         highlight = { enabled = true },
         rainbow = { enabled = false },
     },
-
     lang = {
         python = {
             linter = '',
             -- @usage can be 'yapf', 'black'
-            formatter = '',
-            autoformat = false,
-            isort = false,
+            formatter = 'yapf',
+            autoformat = true,
+            isort = true,
             diagnostics = {
                 virtual_text = {spacing = 0, prefix = ""},
                 signs = true,
