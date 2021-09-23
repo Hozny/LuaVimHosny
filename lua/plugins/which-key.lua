@@ -113,11 +113,21 @@ local mappings = {
           "Git Diff",
         },
       },
-    h = { 
-        h = { ":HopLine<CR>", "Hop Line" },
-        H = { ":HopWord<CR>", "Hop Word" },
+    p = {
+        name = "Packer",
+        c = { "<cmd>PackerCompile<CR>", "Compile" },
+        i = { "<cmd>PackerInstall<CR>", "Install" },
+        r = { "<cmd>lua require('utils').reload_lv_config()<CR>", "Reload" },
+        s = { "<cmd>PackerSync<CR>", "Sync" },
+        S = { "<cmd>PackerStatus<CR>", "Status" },
+        u = { "<cmd>PackerUpdate<CR>", "Update" },
+      },
+    z = { 
+        name = "Jump (zap) to locations",
+        l = { ":HopLine<CR>", "Hop Line" },
+        w = { ":HopWord<CR>", "Hop Word" },
     },
-    l = {
+    L = {
         name = "LSP",
         a = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Code Action" },
         d = {
@@ -152,15 +162,6 @@ local mappings = {
           "<cmd>Telescope lsp_dynamic_workspace_symbols<CR>",
           "Workspace Symbols",
         },
-      },
-    p = {
-        name = "Packer",
-        c = { "<cmd>PackerCompile<CR>", "Compile" },
-        i = { "<cmd>PackerInstall<CR>", "Install" },
-        r = { "<cmd>lua require('utils').reload_lv_config()<CR>", "Reload" },
-        s = { "<cmd>PackerSync<CR>", "Sync" },
-        S = { "<cmd>PackerStatus<CR>", "Status" },
-        u = { "<cmd>PackerUpdate<CR>", "Update" },
       },
     T = {
         name = "Treesitter",

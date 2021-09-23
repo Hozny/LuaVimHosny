@@ -4,7 +4,7 @@ This init file loads all of the plugin configuration files
 
 return {
 	require('plugins.hop'),
-	require('plugins.compe'),
+	require('plugins.cmp'),
 	require('plugins.lualine'),
 	require('plugins.lspkind'),
 	require('plugins.luasnip'),

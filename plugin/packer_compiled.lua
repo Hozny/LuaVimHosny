@@ -73,6 +73,14 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/yousof/.local/share/nvim/site/pack/packer/start/bluewery.vim"
   },
+  ["cmp-buffer"] = {
+    loaded = true,
+    path = "/home/yousof/.local/share/nvim/site/pack/packer/start/cmp-buffer"
+  },
+  ["cmp-nvim-lsp"] = {
+    loaded = true,
+    path = "/home/yousof/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp"
+  },
   ["dashboard-nvim"] = {
     loaded = true,
     path = "/home/yousof/.local/share/nvim/site/pack/packer/start/dashboard-nvim"
@@ -129,6 +137,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/yousof/.local/share/nvim/site/pack/packer/start/nvim-bufferline.lua"
   },
+  ["nvim-cmp"] = {
+    loaded = true,
+    path = "/home/yousof/.local/share/nvim/site/pack/packer/start/nvim-cmp"
+  },
   ["nvim-colorizer.lua"] = {
     loaded = true,
     path = "/home/yousof/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua"
@@ -136,10 +148,6 @@ _G.packer_plugins = {
   ["nvim-comment"] = {
     loaded = true,
     path = "/home/yousof/.local/share/nvim/site/pack/packer/start/nvim-comment"
-  },
-  ["nvim-compe"] = {
-    loaded = true,
-    path = "/home/yousof/.local/share/nvim/site/pack/packer/start/nvim-compe"
   },
   ["nvim-lspconfig"] = {
     loaded = true,

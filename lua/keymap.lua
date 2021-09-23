@@ -33,6 +33,12 @@ map('n', '<leader>nh', '<cmd>nohlsearch<CR>', opt) -- Toggle highlights
 map('n', '<leader>ya', ':%y+<CR>', opt) -- Copy content of entire buffer to system clipboard
 map('n', '<leader>yl', '"+yy', opt) -- yank current line into system clipboard
 
+-- better window movement
+map('n', '<leader>h', '<C-w>h', {silent = true})
+map('n', '<leader>j', '<C-w>j', {silent = true})
+map('n', '<leader>k', '<C-w>k', {silent = true})
+map('n', '<leader>l', '<C-w>l', {silent = true})
+
 -- better indenting
 map('v', '<', '<gv', {noremap = true, silent = true})
 map('v', '>', '>gv', {noremap = true, silent = true})
