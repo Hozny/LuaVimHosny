@@ -54,4 +54,14 @@ return require('packer').startup(function(use)
 	use('sainnhe/everforest')
 	use('relastle/bluewery.vim')
 	use('haishanh/night-owl.vim')
+
+	-- Whichkey
+    use{
+        "folke/which-key.nvim",
+        config = function()
+            require("plugins.which-key").setup()
+        end,
+        event = "BufWinEnter",
+	}
+
 end)

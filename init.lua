@@ -22,5 +22,6 @@ scheme.load_shared_scheme('everforest')
 -- load configurations
 -- config.plug loads plugin configurations
 -- config.module loads user contrib files (work in progress)
-require('config.plug')
-require('config.modules')
+require('plugins')
+-- idk what plugins are so they are disabled for now
+-- require('config.modules')

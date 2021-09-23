@@ -188,10 +188,23 @@ _G.packer_plugins = {
   ["vim-monokai"] = {
     loaded = true,
     path = "/home/yousof/.local/share/nvim/site/pack/packer/start/vim-monokai"
+  },
+  ["which-key.nvim"] = {
+    config = { "\27LJ\2\2?\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\22plugins.which-key\frequire\0" },
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/yousof/.local/share/nvim/site/pack/packer/opt/which-key.nvim"
   }
 }
 
 time([[Defining packer_plugins]], false)
+vim.cmd [[augroup packer_load_aucmds]]
+vim.cmd [[au!]]
+  -- Event lazy-loads
+time([[Defining lazy-load event autocommands]], true)
+vim.cmd [[au BufWinEnter * ++once lua require("packer.load")({'which-key.nvim'}, { event = "BufWinEnter *" }, _G.packer_plugins)]]
+time([[Defining lazy-load event autocommands]], false)
+vim.cmd("augroup END")
 if should_profile then save_profiles() end
 
 end)
