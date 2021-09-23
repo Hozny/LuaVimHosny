@@ -1,45 +1,26 @@
-require('hzny-globals')
-require('hzny-config-global')
-require('plugins')
-require('settings')
-require('keymaps')
+-- Load All packer
+require('plug')
 
-require('lsp')
-require('config.hzny-telescope')
-require('config.hzny-lspinstall')
-require('config.hzny-whichkey')
-require('config.hzny-treesitter')
+-- load keybindings and editor options
+require('keymap')
+require('options')
 
--- LSP setups
-require('lsp.python-ls')
-require('lsp.efm-general-ls')
---[[
-require('lsp.angular-ls')
-require('lsp.bash-ls')
-require('lsp.clangd')
-require('lsp.cmake-ls')
-require('lsp.css-ls')
-require('lsp.dart-ls')
-require('lsp.docker-ls')
-require('lsp.elm-ls')
-require('lsp.emmet-ls')
-require('lsp.graphql-ls')
-require('lsp.go-ls')
-require('lsp.html-ls')
-require('lsp.json-ls')
-require('lsp.js-ts-ls')
-require('lsp.kotlin-ls')
-require('lsp.latex-ls')
-require('lsp.lua-ls')
-require('lsp.php-ls')
-require('lsp.ruby-ls')
-require('lsp.rust-ls')
-require('lsp.svelte-ls')
-require('lsp.terraform-ls')
--- require('lsp.tailwindcss-ls')
-require('lsp.vim-ls')
-require('lsp.vue-ls')
-require('lsp.yaml-ls')
-require('lsp.elixir-ls')
---]]
+-- load theme loading library
+local scheme = require('lib.scheme')
 
+-- Load Themes (loads everforest theme by default)
+-- load editor color theme
+-- scheme.load_scheme('everforest')
+
+-- load statusline theme
+-- scheme.load_lualine_scheme('everforest')
+
+-- if you don't  want to specify the theme for each component,
+-- you can use the following function
+scheme.load_shared_scheme('everforest')
+
+-- load configurations
+-- config.plug loads plugin configurations
+-- config.module loads user contrib files (work in progress)
+require('config.plug')
+require('config.modules')
