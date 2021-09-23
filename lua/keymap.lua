@@ -20,16 +20,26 @@ local opt = {} --empty opt for maps with no extra options
 		map("n", "<C-n>", ":set rnu!<CR>", opt)
 --]]
 
+-- NOTE: these are all keymaps that are not in which-key.lua (basic keymaps)
+--       most keymaps related to a plugin or non-basic functionality is in which-key.lua
+
 vim.g.mapleader = ' ' -- Map leader key to space
 map('n', '<leader>ln', ':set rnu!<CR>', opt) -- toggle relative line numbers
-map('', '<C-c>', ':CommentToggle<CR>', opt) -- toggle comment on current line or selection
-map('', '<C-t>', ':NvimTreeToggle<CR>', opt) -- toggle nvimtree
 map('n', '<leader>nf', ':Neoformat<CR>', { noremap = true }) -- format current buffer with neoformat
 map('n', '<leader>~', ':Dashboard<CR>', opt) -- map show dashboard
+map('n', '<leader>nh', '<cmd>nohlsearch<CR>', opt) -- Toggle highlights
 
 -- clipboard mappings
 map('n', '<leader>ya', ':%y+<CR>', opt) -- Copy content of entire buffer to system clipboard
 map('n', '<leader>yl', '"+yy', opt) -- yank current line into system clipboard
+
+-- better indenting
+map('v', '<', '<gv', {noremap = true, silent = true})
+map('v', '>', '>gv', {noremap = true, silent = true})
+
+-- Escape remaps
+map('i', 'jk', '<ESC>', {noremap = true, silent = true})
+map('i', 'kj', '<ESC>', {noremap = true, silent = true})
 
 -- completion keybinds
 map('i', '<Tab>', 'v:lua.tab_complete()', { expr = true })
@@ -40,18 +50,18 @@ map('i', '<C-E>', '<Plug>luasnip-next-choice', {})
 map('s', '<C-E>', '<Plug>luasnip-next-choice', {})
 
 -- buffer management
-map('n', '<leader>bh', ':bf<CR>', { noremap = true })
-map('n', '<leader>bk', ':bn<CR>', { noremap = true })
-map('n', '<leader>bj', ':bp<CR>', { noremap = true })
-map('n', '<leader>bl', ':bl<CR>', { noremap = true })
-map('n', '<leader>bd', ':bd<CR>', { noremap = true })
+-- map('n', '<leader>bh', ':bf<CR>', { noremap = true })
+-- map('n', '<leader>bk', ':bn<CR>', { noremap = true })
+-- map('n', '<leader>bj', ':bp<CR>', { noremap = true })
+-- map('n', '<leader>bl', ':bl<CR>', { noremap = true })
+-- map('n', '<leader>bd', ':bd<CR>', { noremap = true })
 
 -- telescope pullup
-map('n', '<leader>ff', ':Telescope find_files<CR>', { noremap = true })
-map('n', '<leader>fF', ':Telescope file_browser<CR>', { noremap = true })
-map('n', '<leader>fg', ':Telescope git_commits<CR>', { noremap = true })
-map('n', '<leader>fG', ':Telescope git_branches<CR>', { noremap = true })
+-- map('n', '<leader>ff', ':Telescope find_files<CR>', { noremap = true })
+-- map('n', '<leader>fF', ':Telescope file_browser<CR>', { noremap = true })
+-- map('n', '<leader>fg', ':Telescope git_commits<CR>', { noremap = true })
+-- map('n', '<leader>fG', ':Telescope git_branches<CR>', { noremap = true })
 
 -- hop.nvim
-map('n', '<leader>hH', ':HopWord<CR>', opt)
-map('n', '<leader>hh', ':HopLine<CR>', opt)
+-- map('n', '<leader>hH', ':HopWord<CR>', opt)
+-- map('n', '<leader>hh', ':HopLine<CR>', opt)

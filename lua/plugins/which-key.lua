@@ -1,5 +1,6 @@
 local M = {}
 
+-- TODO: consider adding conf, opts, vopts, ... to a global variable (not sure if there is a use case for that)
 local conf = {
   plugins = {
     marks = true, -- shows a list of your marks on ' and `
@@ -9,7 +10,7 @@ local conf = {
       suggestions = 20, -- how many suggestions should be shown in the list?
     },
     -- the presets plugin, adds help for a bunch of default keybindings in Neovim
-    -- No actual key bindings are created
+    -- No actual key bindings are CReated
     presets = {
       operators = true, -- adds help for operators like d, y, ... and registers them for motion / text object completion
       motions = true, -- adds help for motions
@@ -27,11 +28,11 @@ local conf = {
     -- override the label used to display some keys. It doesn't effect WK in any other way.
     -- For example:
     -- ["<space>"] = "SPC",
-    -- ["<cr>"] = "RET",
+    -- ["<CR>"] = "RET",
     -- ["<tab>"] = "TAB",
   },
   icons = {
-    breadcrumb = "»", -- symbol used in the command line area that shows your active key combo
+    breadCRumb = "»", -- symbol used in the command line area that shows your active key combo
     separator = "➜", -- symbol used between a key and it's label
     group = "+", -- symbol prepended to a group
   },
@@ -61,11 +62,120 @@ local conf = {
   },
 }
 
+
+local opts = {
+    mode = "n", -- NORMAL mode
+    prefix = "<leader>",
+    buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
+    silent = true, -- use `silent` when CReating keymaps
+    noremap = true, -- use `noremap` when CReating keymaps
+    nowait = true, -- use `nowait` when CReating keymaps
+}
+local mappings = {
+    ["/"] = { "<cmd>CommentToggle<CR>", "Comment" },
+    ["c"] = { "<cmd>BufferClose!<CR>", "Close Buffer" },
+    ["f"] = { "<cmd>Telescope find_files<CR>", "Find File" },
+    ["e"] = { ":NvimTreeToggle<CR>", "File Explorer" },
+
+    b = {
+        name = "Buffer",
+        f = { "<cmd>Telescope buffers<CR>", "Find" },
+        b = { "<cmd>b#<CR>", "Previous" },
+    },
+    f = {
+        f = {":Telescope find_files<CR>", "Find Files"},
+        b = {":Telescope file_browser<CR>", "File Browser"},
+        g = {":Telescope git_commits<CR>", "Git Commits"},
+        G = {":Telescope git_branches<CR>", "Git Branches"},
+    },
+    g = {
+        name = "Git",
+        j = { "<cmd>lua require 'gitsigns'.next_hunk()<CR>", "Next Hunk" },
+        k = { "<cmd>lua require 'gitsigns'.prev_hunk()<CR>", "Prev Hunk" },
+        l = { "<cmd>lua require 'gitsigns'.blame_line()<CR>", "Blame" },
+        p = { "<cmd>lua require 'gitsigns'.preview_hunk()<CR>", "Preview Hunk" },
+        r = { "<cmd>lua require 'gitsigns'.reset_hunk()<CR>", "Reset Hunk" },
+        R = { "<cmd>lua require 'gitsigns'.reset_buffer()<CR>", "Reset Buffer" },
+        s = { "<cmd>lua require 'gitsigns'.stage_hunk()<CR>", "Stage Hunk" },
+        u = {
+          "<cmd>lua require 'gitsigns'.undo_stage_hunk()<CR>",
+          "Undo Stage Hunk",
+        },
+        o = { "<cmd>Telescope git_status<CR>", "Open changed file" },
+        b = { "<cmd>Telescope git_branches<CR>", "Checkout branch" },
+        c = { "<cmd>Telescope git_commits<CR>", "Checkout commit" },
+        C = {
+          "<cmd>Telescope git_bcommits<CR>",
+          "Checkout commit(for current file)",
+        },
+        d = {
+          "<cmd>Gitsigns diffthis HEAD<CR>",
+          "Git Diff",
+        },
+      },
+    h = { 
+        h = { ":HopLine<CR>", "Hop Line" },
+        H = { ":HopWord<CR>", "Hop Word" },
+    },
+    l = {
+        name = "LSP",
+        a = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Code Action" },
+        d = {
+          "<cmd>Telescope lsp_document_diagnostics<CR>",
+          "Document Diagnostics",
+        },
+        w = {
+          "<cmd>Telescope lsp_workspace_diagnostics<CR>",
+          "Workspace Diagnostics",
+        },
+        -- f = { "<cmd>silent FormatWrite<CR>", "Format" },
+        f = { "<cmd>lua vim.lsp.buf.formatting()<CR>", "Format" },
+        i = { "<cmd>LspInfo<CR>", "Info" },
+        j = {
+          "<cmd>lua vim.lsp.diagnostic.goto_next({popup_opts = {border = lvim.lsp.popup_border}})<CR>",
+          "Next Diagnostic",
+        },
+        k = {
+          "<cmd>lua vim.lsp.diagnostic.goto_prev({popup_opts = {border = lvim.lsp.popup_border}})<CR>",
+          "Prev Diagnostic",
+        },
+        p = {
+          name = "Peek",
+          d = { "<cmd>lua require('lsp.peek').Peek('definition')<CR>", "Definition" },
+          t = { "<cmd>lua require('lsp.peek').Peek('typeDefinition')<CR>", "Type Definition" },
+          i = { "<cmd>lua require('lsp.peek').Peek('implementation')<CR>", "Implementation" },
+        },
+        q = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>", "Quickfix" },
+        r = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename" },
+        s = { "<cmd>Telescope lsp_document_symbols<CR>", "Document Symbols" },
+        S = {
+          "<cmd>Telescope lsp_dynamic_workspace_symbols<CR>",
+          "Workspace Symbols",
+        },
+      },
+    p = {
+        name = "Packer",
+        c = { "<cmd>PackerCompile<CR>", "Compile" },
+        i = { "<cmd>PackerInstall<CR>", "Install" },
+        r = { "<cmd>lua require('utils').reload_lv_config()<CR>", "Reload" },
+        s = { "<cmd>PackerSync<CR>", "Sync" },
+        S = { "<cmd>PackerStatus<CR>", "Status" },
+        u = { "<cmd>PackerUpdate<CR>", "Update" },
+      },
+    T = {
+        name = "Treesitter",
+        i = { ":TSConfigInfo<CR>", "Info" },
+    },
+}
+
+local vopts = {}
+local vmappings = {}
+
 M.setup = function()
   local which_key = require "which-key"
 
   which_key.setup(conf)
-
+  which_key.register(mappings, opts)
 end
 
 return M
