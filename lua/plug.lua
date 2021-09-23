@@ -13,7 +13,7 @@ return require('packer').startup(function(use)
 	-- packer self management
 	use('wbthomason/packer.nvim')
 
-	-- lsp realted plugins
+	-- lsp related plugins
 	-- includes autocomplete and lsp suggestions
 	use('neovim/nvim-lspconfig')
 	use('kabouzeid/nvim-lspinstall')
@@ -22,7 +22,7 @@ return require('packer').startup(function(use)
 	use('L3MON4D3/luasnip')
 
 	-- utility plugins
-	-- these plugins are all realted to editor configs
+	-- these plugins are all related to editor configs
 	use('windwp/nvim-autopairs')
 	use({ 'hoob3rt/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true } })
 	use({ 'akinsho/nvim-bufferline.lua', requires = 'kyazdani42/nvim-web-devicons' })
@@ -39,7 +39,7 @@ return require('packer').startup(function(use)
 	use('glepnir/dashboard-nvim')
 	use('norcalli/nvim-colorizer.lua')
 
-	-- git realted plugins
+	-- git related plugins
 	use({ 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } })
 
 	-- themes
