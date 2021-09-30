@@ -1,3 +1,14 @@
+-- Things to do for the nvim config
+-- TODO: 
+-- [] Fix nvim-tree opening on some files (i think when multiple are open it doesn't work)
+--     - [] doesn't open right away
+--     - [] map findfile to e->r (maybe make opening it e->e)
+-- [] Add visual mode commands to which-key
+-- [] Add Harpoon file navigation
+-- [] Add git diff / better git control
+-- [] Add browsing remote github repos
+-- [] Figure out lazy loading of plugins (get load time <100)
+
 -- Load All packer
 require('plug')
 
@@ -17,7 +28,7 @@ local scheme = require('lib.scheme')
 
 -- if you don't  want to specify the theme for each component,
 -- you can use the following function
-scheme.load_shared_scheme('everforest')
+scheme.load_shared_scheme('onedark')
 
 -- TODO: Investigate if this loads all plugins at once
 --       should implement lazy loading to only load when required
@@ -30,5 +41,4 @@ require('plugins')
 
 -- loads all lsp-config configurations in lua/lsp/*
 require('lsp')
-
 

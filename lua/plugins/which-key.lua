@@ -83,9 +83,10 @@ local mappings = {
         b = { "<cmd>b#<CR>", "Previous" },
     },
     f = {
-        f = {":Telescope find_files<CR>", "Find Files"},
         b = {":Telescope file_browser<CR>", "File Browser"},
+        f = {":Telescope find_files<CR>", "Find Files"},
         g = {":Telescope git_commits<CR>", "Git Commits"},
+        t = { "<cmd>Telescope live_grep<cr>", "Text" },
         G = {":Telescope git_branches<CR>", "Git Branches"},
     },
     g = {
@@ -119,13 +120,15 @@ local mappings = {
         i = { "<cmd>PackerInstall<CR>", "Install" },
         r = { "<cmd>lua require('utils').reload_lv_config()<CR>", "Reload" },
         s = { "<cmd>PackerSync<CR>", "Sync" },
-        S = { "<cmd>PackerStatus<CR>", "Status" },
+        S = { "<csd>PackerStatus<CR>", "Status" },
         u = { "<cmd>PackerUpdate<CR>", "Update" },
       },
-    z = { 
-        name = "Jump (zap) to locations",
-        l = { ":HopLine<CR>", "Hop Line" },
-        w = { ":HopWord<CR>", "Hop Word" },
+    s = { 
+        name = "Jump (snap) to locations",
+        a = {"<cmd>lua require('hop').hint_words()<CR>", "Hop Word"},
+        l = {"<cmd>lua require('hop').hint_lines()<CR>", "Hop Line"},
+        s = {"<cmd>lua require('hop').hint_char2()<CR>", "Hop Char2"},
+        d = {"<cmd>lua require('hop').hint_char1()<CR>", "Hop Char2"},
     },
     L = {
         name = "LSP",
@@ -157,7 +160,7 @@ local mappings = {
         },
         q = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>", "Quickfix" },
         r = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename" },
-        s = { "<cmd>Telescope lsp_document_symbols<CR>", "Document Symbols" },
+    s = { "<cmd>Telescope lsp_document_symbols<CR>", "Document Symbols" },
         S = {
           "<cmd>Telescope lsp_dynamic_workspace_symbols<CR>",
           "Workspace Symbols",

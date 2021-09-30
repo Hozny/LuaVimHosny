@@ -23,3 +23,6 @@ opt.splitright = true
 o.completeopt = 'menuone,noselect'
 
 vim.opt.termguicolors = true
+opt.clipboard = "unnamedplus" -- allows neovim to access system clipboard
+opt.relativenumber = false -- relative line numbers
+
