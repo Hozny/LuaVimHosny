@@ -24,10 +24,10 @@ local opt = {} --empty opt for maps with no extra options
 --       most keymaps related to a plugin or non-basic functionality is in which-key.lua
 
 vim.g.mapleader = ' ' -- Map leader key to space
-map('n', '<leader>ln', ':set rnu!<CR>', opt) -- toggle relative line numbers
 map('n', '<leader>nf', ':Neoformat<CR>', { noremap = true }) -- format current buffer with neoformat
 map('n', '<leader>~', ':Dashboard<CR>', opt) -- map show dashboard
-map('n', '<leader>nh', '<cmd>nohlsearch<CR>', opt) -- Toggle highlights
+-- map('n', '<leader>ln', ':set rnu!<CR>', opt) -- toggle relative line numbers
+-- map('n', '<leader>nh', '<cmd>nohlsearch<CR>', opt) -- Toggle highlights
 
 -- clipboard mappings
 map('n', '<leader>ya', ':%y+<CR>', opt) -- Copy content of entire buffer to system clipboard

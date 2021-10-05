@@ -82,6 +82,10 @@ local mappings = {
         f = { "<cmd>Telescope buffers<CR>", "Find" },
         b = { "<cmd>b#<CR>", "Previous" },
     },
+    e = {
+        e = { ":NvimTreeToggle<CR>", "File Explorer" },
+        f = { ":NvimTreeFindFile<CR>", "Find File" },
+    },
     f = {
         b = {":Telescope file_browser<CR>", "File Browser"},
         f = {":Telescope find_files<CR>", "Find Files"},
@@ -114,6 +118,11 @@ local mappings = {
           "Git Diff",
         },
       },
+    n = {
+        name = "No (disable/toggle) option",
+        l = { "<cmd>set rnu!<CR>", "Line number" },
+        h = { "<cmd>nohlsearch<CR>", "No search highlights" }
+    },
     p = {
         name = "Packer",
         c = { "<cmd>PackerCompile<CR>", "Compile" },
