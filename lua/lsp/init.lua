@@ -1,6 +1,7 @@
 -- imports
 require('lsp.sumneko-lua') -- lua
 require('lsp.pyright') -- python
+require('lsp.clangd')
 
 
 -- config
@@ -18,6 +19,7 @@ local on_attach = function(client, bufnr)
   -- Mappings.
   local opts = { noremap=true, silent=true }
 
+  -- TODO: Move these to which-key setup
   -- See `:help vim.lsp.*` for documentation on any of the below functions
   buf_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
   buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
