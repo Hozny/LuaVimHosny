@@ -3,11 +3,9 @@ This init file loads all of the plugin configuration files
 --]]
 
 return {
-	require('plugins.hop'),
 	require('plugins.cmp'),
 	require('plugins.lualine'),
 	require('plugins.lspkind'),
-	require('plugins.luasnip'),
 	require('plugins.nvimtree'),
 	require('plugins.gitsigns'),
 	require('plugins.dashboard'),

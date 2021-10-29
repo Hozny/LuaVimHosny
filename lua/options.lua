@@ -25,4 +25,4 @@ o.completeopt = 'menuone,noselect'
 vim.opt.termguicolors = true
 opt.clipboard = "unnamedplus" -- allows neovim to access system clipboard
 opt.relativenumber = false -- relative line numbers
-
+opt.wrap = false -- do not wrap lines around when too long

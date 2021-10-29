@@ -114,7 +114,7 @@ local mappings = {
           "Checkout commit(for current file)",
         },
         d = {
-          "<cmd>Gitsigns diffthis HEAD<CR>",
+          "<cmd>Gitsigns diff this HEAD<CR>",
           "Git Diff",
         },
       },
@@ -132,13 +132,6 @@ local mappings = {
         S = { "<csd>PackerStatus<CR>", "Status" },
         u = { "<cmd>PackerUpdate<CR>", "Update" },
       },
-    s = { 
-        name = "Jump (snap) to locations",
-        a = {"<cmd>lua require('hop').hint_words()<CR>", "Hop Word"},
-        l = {"<cmd>lua require('hop').hint_lines()<CR>", "Hop Line"},
-        s = {"<cmd>lua require('hop').hint_char2()<CR>", "Hop Char2"},
-        d = {"<cmd>lua require('hop').hint_char1()<CR>", "Hop Char2"},
-    },
     L = {
         name = "LSP",
         a = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Code Action" },

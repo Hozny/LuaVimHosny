@@ -21,7 +21,9 @@ return require('packer').startup(function(use)
     use('hrsh7th/cmp-nvim-lsp')
     use('hrsh7th/cmp-buffer')
 	use('onsails/lspkind-nvim')
+
 	use('L3MON4D3/luasnip')
+    use { 'saadparwaiz1/cmp_luasnip' } -- required for nvim-cmp + luasnip combo
 
 	-- utility plugins
 	-- these plugins are all related to editor configs
@@ -33,7 +35,9 @@ return require('packer').startup(function(use)
 	use({ 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' })
 	use('terrortylor/nvim-comment')
 	use('sbdchd/neoformat')
-	use('phaazon/hop.nvim')
+
+    -- file navigation (lightspeed)
+    use('ggandor/lightspeed.nvim')
 
 	-- cosmetic addition plugins
 	-- these add in a bit more bling and flair to nvim
