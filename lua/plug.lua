@@ -23,7 +23,7 @@ return require('packer').startup(function(use)
 	use('onsails/lspkind-nvim')
 
 	use('L3MON4D3/luasnip')
-    use { 'saadparwaiz1/cmp_luasnip' } -- required for nvim-cmp + luasnip combo
+    use('saadparwaiz1/cmp_luasnip') -- required for nvim-cmp + luasnip combo
 
 	-- utility plugins
 	-- these plugins are all related to editor configs
@@ -49,17 +49,14 @@ return require('packer').startup(function(use)
 	use({ 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } })
 
 	-- themes
-	-- popular themes incoming
-	use('joshdick/onedark.vim')
-	use('sickill/vim-monokai')
-	use('morhetz/gruvbox')
-	use('shaunsingh/nord.nvim')
-	use('sainnhe/gruvbox-material')
-
-	-- neesh themes
-	use('sainnhe/everforest')
-	use('relastle/bluewery.vim')
-	use('haishanh/night-owl.vim')
+	use('monsonjeremy/onedark.nvim')
+	-- use('sickill/vim-monokai')
+	-- use('morhetz/gruvbox')
+	-- use('shaunsingh/nord.nvim')
+	-- use('sainnhe/gruvbox-material')
+	-- use('sainnhe/everforest')
+	-- use('relastle/bluewery.vim')
+	-- use('haishanh/night-owl.vim')
 
 	-- Whichkey
     use{

@@ -147,11 +147,11 @@ local mappings = {
         f = { "<cmd>lua vim.lsp.buf.formatting()<CR>", "Format" },
         i = { "<cmd>LspInfo<CR>", "Info" },
         j = {
-          "<cmd>lua vim.lsp.diagnostic.goto_next({popup_opts = {border = lvim.lsp.popup_border}})<CR>",
+          "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>",
           "Next Diagnostic",
         },
         k = {
-          "<cmd>lua vim.lsp.diagnostic.goto_prev({popup_opts = {border = lvim.lsp.popup_border}})<CR>",
+          "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>",
           "Prev Diagnostic",
         },
         p = {
