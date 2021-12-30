@@ -1,5 +1,5 @@
 <h1 align="center"> hzny-nvim:<br><i>My neovim config</i></h1>
-- Based of [nii-nvim](https://github.com/Theory-of-Everything/nii-nvim)
+- Based off [nii-nvim](https://github.com/Theory-of-Everything/nii-nvim)
 
 ## Requirements
 - neovim 5.0 or greater
