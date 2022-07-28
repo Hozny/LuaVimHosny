@@ -50,13 +50,14 @@ return require('packer').startup(function(use)
 
 	-- themes
 	use('monsonjeremy/onedark.nvim')
-	-- use('sickill/vim-monokai')
+	use('sickill/vim-monokai')
 	-- use('morhetz/gruvbox')
-	-- use('shaunsingh/nord.nvim')
-	-- use('sainnhe/gruvbox-material')
-	-- use('sainnhe/everforest')
-	-- use('relastle/bluewery.vim')
-	-- use('haishanh/night-owl.vim')
+	use { "ellisonleao/gruvbox.nvim" }
+	use('shaunsingh/nord.nvim')
+	use('sainnhe/gruvbox-material')
+	use('sainnhe/everforest')
+	use('relastle/bluewery.vim')
+	use('haishanh/night-owl.vim')
 
 	-- Whichkey
     use{

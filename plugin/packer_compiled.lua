@@ -69,6 +69,11 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["bluewery.vim"] = {
+    loaded = true,
+    path = "/Users/yousof/.local/share/nvim/site/pack/packer/start/bluewery.vim",
+    url = "https://github.com/relastle/bluewery.vim"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/Users/yousof/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -89,10 +94,25 @@ _G.packer_plugins = {
     path = "/Users/yousof/.local/share/nvim/site/pack/packer/start/dashboard-nvim",
     url = "https://github.com/glepnir/dashboard-nvim"
   },
+  everforest = {
+    loaded = true,
+    path = "/Users/yousof/.local/share/nvim/site/pack/packer/start/everforest",
+    url = "https://github.com/sainnhe/everforest"
+  },
   ["gitsigns.nvim"] = {
     loaded = true,
     path = "/Users/yousof/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
+  },
+  gruvbox = {
+    loaded = true,
+    path = "/Users/yousof/.local/share/nvim/site/pack/packer/start/gruvbox",
+    url = "https://github.com/morhetz/gruvbox"
+  },
+  ["gruvbox-material"] = {
+    loaded = true,
+    path = "/Users/yousof/.local/share/nvim/site/pack/packer/start/gruvbox-material",
+    url = "https://github.com/sainnhe/gruvbox-material"
   },
   ["lightspeed.nvim"] = {
     loaded = true,
@@ -118,6 +138,16 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/yousof/.local/share/nvim/site/pack/packer/start/neoformat",
     url = "https://github.com/sbdchd/neoformat"
+  },
+  ["night-owl.vim"] = {
+    loaded = true,
+    path = "/Users/yousof/.local/share/nvim/site/pack/packer/start/night-owl.vim",
+    url = "https://github.com/haishanh/night-owl.vim"
+  },
+  ["nord.nvim"] = {
+    loaded = true,
+    path = "/Users/yousof/.local/share/nvim/site/pack/packer/start/nord.nvim",
+    url = "https://github.com/shaunsingh/nord.nvim"
   },
   ["nvim-autopairs"] = {
     loaded = true,
@@ -198,6 +228,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/yousof/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  ["vim-monokai"] = {
+    loaded = true,
+    path = "/Users/yousof/.local/share/nvim/site/pack/packer/start/vim-monokai",
+    url = "https://github.com/sickill/vim-monokai"
   },
   ["which-key.nvim"] = {
     config = { "\27LJ\2\n?\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\22plugins.which-key\frequire\0" },

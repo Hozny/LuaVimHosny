@@ -9,8 +9,10 @@
 --      - [] add indicator to statusline
 -- [] Add visual for trailing whitespace
 
-local theme = 'onedark'
+local theme = 'gruvbox'
+
 vim.cmd("colorscheme " .. theme)
+
 require('themes')
 
 -- Load All packer

@@ -2,10 +2,10 @@
 -- MIT license, see LICENSE for more details.
 -- LuaFormatter off
 local colors = {
-	base_fg = '#3C3836',
+	base_fg = '#282828',
 	light_fg = '#BDAE93',
 	secondary = '#504945',
-	background = '#3C3836',
+	background = '#282828',
 	norm_bg = '#D79921',
 	ins_bg = '#FB4934',
 	vis_bg = '#458588',
