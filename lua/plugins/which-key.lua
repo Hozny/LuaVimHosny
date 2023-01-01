@@ -76,6 +76,9 @@ local mappings = {
     ["c"] = { "<cmd>BufferClose!<CR>", "Close Buffer" },
     ["f"] = { "<cmd>Telescope find_files<CR>", "Find File" },
     ["e"] = { ":NvimTreeToggle<CR>", "File Explorer" },
+	["q"] = {"<cmd>quit<CR>", "quit"},
+	["="] = {"<cmd>resize +5<CR>", "Increase window"},
+	["-"] = {"<cmd>resize -5<CR>", "Reduce window"},
 
     b = {
         name = "Buffer",
@@ -90,6 +93,7 @@ local mappings = {
         b = {":Telescope file_browser<CR>", "File Browser"},
         f = {":Telescope find_files<CR>", "Find Files"},
         g = {":Telescope git_commits<CR>", "Git Commits"},
+        s = { "<cmd>Telescope lsp_dynamic_workspace_symbols<CR>"},
         t = { "<cmd>Telescope live_grep<cr>", "Text" },
         G = {":Telescope git_branches<CR>", "Git Branches"},
     },
@@ -131,7 +135,7 @@ local mappings = {
         s = { "<cmd>PackerSync<CR>", "Sync" },
         S = { "<csd>PackerStatus<CR>", "Status" },
         u = { "<cmd>PackerUpdate<CR>", "Update" },
-      },
+	},
     L = {
         name = "LSP",
         a = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Code Action" },
@@ -162,12 +166,12 @@ local mappings = {
         },
         q = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>", "Quickfix" },
         r = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename" },
-    s = { "<cmd>Telescope lsp_document_symbols<CR>", "Document Symbols" },
-        S = {
-          "<cmd>Telescope lsp_dynamic_workspace_symbols<CR>",
-          "Workspace Symbols",
-        },
-      },
+	},
+	s = {
+		name = "Split",
+		v = { "<cmd> vsplit<CR>", "Vertical Split"},
+		h = { "<cmd> split<CR>", "Horizontal Split"},
+	},
     T = {
         name = "Treesitter",
         i = { ":TSConfigInfo<CR>", "Info" },

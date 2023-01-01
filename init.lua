@@ -9,7 +9,7 @@
 --      - [] add indicator to statusline
 -- [] Add visual for trailing whitespace
 
-local theme = 'gruvbox'
+local theme = 'oxocarbon'
 
 vim.cmd("colorscheme " .. theme)
 
@@ -26,6 +26,6 @@ require('options')
 -- config.plug loads plugin configurations
 -- config.module loads user contrib files (work in progress)
 require('plugins')
+
 -- loads all lsp-config configurations in lua/lsp/*
 require('lsp')
-

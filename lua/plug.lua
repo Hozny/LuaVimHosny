@@ -22,7 +22,7 @@ return require('packer').startup(function(use)
     use('hrsh7th/cmp-buffer')
 	use('onsails/lspkind-nvim')
 
-	use('L3MON4D3/luasnip')
+	--use('L3MON4D3/luasnip')
     use('saadparwaiz1/cmp_luasnip') -- required for nvim-cmp + luasnip combo
 
 	-- utility plugins
@@ -51,13 +51,14 @@ return require('packer').startup(function(use)
 	-- themes
 	use('monsonjeremy/onedark.nvim')
 	use('sickill/vim-monokai')
-	-- use('morhetz/gruvbox')
-	use { "ellisonleao/gruvbox.nvim" }
+	use('morhetz/gruvbox')
+	use('ellisonleao/gruvbox.nvim')
 	use('shaunsingh/nord.nvim')
 	use('sainnhe/gruvbox-material')
 	use('sainnhe/everforest')
 	use('relastle/bluewery.vim')
 	use('haishanh/night-owl.vim')
+	use({'shaunsingh/oxocarbon.nvim', run = './install.sh'})
 
 	-- Whichkey
     use{

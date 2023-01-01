@@ -1,18 +1,17 @@
--- Copyright (c) 2021 Jnhtr
--- MIT license, see LICENSE for more details.
--- LuaFormatter off
 local colors = {
 	base_fg = '#282828',
-	light_fg = '#BDAE93',
-	secondary = '#504945',
-	background = '#504945',
-	norm_bg = '#D79921',
-	ins_bg = '#FB4934',
-	vis_bg = '#458588',
+	light_fg = '#dde1e6',
+	secondary = '#262626',
+	background = '#262626',
+	norm_bg = '#78a9ff',
+	ins_bg = '#ee5396',
+	vis_bg = '#be95ff',
 	rep_bg = '#B16286',
 	cmd_bg = '#689D6A',
 	int_bg = '#928374',
 }
+--"#161616", "#262626", "#393939", "#525252", "#dde1e6", "#f2f4f8", "#ffffff", "#08bdba", "#3ddbd9", "#78a9ff", "#ee5396", "#33b1ff", "#ff7eb6", "#42be65", "#be95ff", "#82cfff", "#131313", "",
+
 --LuaFormatter on
 return {
 	normal = {

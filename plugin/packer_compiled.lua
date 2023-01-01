@@ -57,7 +57,7 @@ end
 time([[Luarocks path setup]], false)
 time([[try_loadstring definition]], true)
 local function try_loadstring(s, component, name)
-  local success, result = pcall(loadstring(s))
+  local success, result = pcall(loadstring(s), name, _G.packer_plugins[name])
   if not success then
     vim.schedule(function()
       vim.api.nvim_notify('packer.nvim: Error running ' .. component .. ' for ' .. name .. ': ' .. result, vim.log.levels.ERROR, {})
@@ -113,6 +113,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/yousof/.local/share/nvim/site/pack/packer/start/gruvbox-material",
     url = "https://github.com/sainnhe/gruvbox-material"
+  },
+  ["gruvbox.nvim"] = {
+    loaded = true,
+    path = "/Users/yousof/.local/share/nvim/site/pack/packer/start/gruvbox.nvim",
+    url = "https://github.com/ellisonleao/gruvbox.nvim"
   },
   ["lightspeed.nvim"] = {
     loaded = true,
@@ -204,6 +209,11 @@ _G.packer_plugins = {
     path = "/Users/yousof/.local/share/nvim/site/pack/packer/start/onedark.nvim",
     url = "https://github.com/monsonjeremy/onedark.nvim"
   },
+  ["oxocarbon.nvim"] = {
+    loaded = true,
+    path = "/Users/yousof/.local/share/nvim/site/pack/packer/start/oxocarbon.nvim",
+    url = "https://github.com/shaunsingh/oxocarbon.nvim"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/Users/yousof/.local/share/nvim/site/pack/packer/start/packer.nvim",
@@ -257,5 +267,6 @@ if should_profile then save_profiles() end
 end)
 
 if not no_errors then
+  error_msg = error_msg:gsub('"', '\\"')
   vim.api.nvim_command('echohl ErrorMsg | echom "Error in packer_compiled: '..error_msg..'" | echom "Please check your config for correctness" | echohl None')
 end

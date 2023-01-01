@@ -32,10 +32,11 @@ local lualine_def_themes = {
 	'solarized_light',
 	'tommorow',
 	'wombat',
+	'oxocarbon',
 }
 
 -- initialize vars for schemes
-local lualine_theme = vim.g.colors_name or 'onedark'
+local lualine_theme = vim.g.colors_name or 'oxocarbon'
 
 local is_lualine_default = false	
 for i, name in ipairs(lualine_def_themes) do

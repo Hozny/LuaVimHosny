@@ -5,7 +5,7 @@ This init file loads all of the plugin configuration files
 return {
 	require('plugins.cmp'),
 	require('plugins.lualine'),
-	require('plugins.lspkind'),
+	--require('plugins.lspkind'),
 	require('plugins.nvimtree'),
 	require('plugins.gitsigns'),
 	require('plugins.dashboard'),
