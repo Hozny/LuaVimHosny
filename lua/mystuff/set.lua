@@ -1,7 +1,7 @@
 -- This makes the insert cursor thick
 -- vim.opt.guicursor = ""
 
---vim.opt.nu = true
+vim.opt.nu = true -- Current line number doesn't show without this for some reason.
 vim.opt.relativenumber = true
 
 vim.opt.tabstop = 4
@@ -24,7 +24,7 @@ vim.opt.incsearch = true
 vim.opt.termguicolors = true
 
 vim.opt.scrolloff = 8
-vim.opt.signcolumn = "yes"
+-- vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50

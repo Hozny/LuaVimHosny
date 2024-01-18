@@ -18,14 +18,14 @@ return require('packer').startup(function(use)
         'rose-pine/neovim',
         as = 'rose-pine',
         config = function()
-            vim.cmd('colorscheme rose-pine')
+            -- vim.cmd('colorscheme rose-pine')
         end
     })
     use({
         "ellisonleao/gruvbox.nvim",
         as = 'gruvbox',
         config = function()
-            --vim.cmd('colorscheme gruvbox')
+            vim.cmd('colorscheme gruvbox')
         end
     })
     use({ "catppuccin/nvim", as = "catppuccin" }) -- looks promising, amoled variant
