@@ -18,6 +18,9 @@ vim.keymap.set("x", "<leader>p", [["_dP]])
 -- next greatest remap ever : asbjornHaland
 -- <leader>y copies to system clipboard
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
+
+
+
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
@@ -37,9 +40,22 @@ vim.keymap.set("n", "<leader>j", "<C-w>j")
 vim.keymap.set("n", "<leader>k", "<C-w>k")
 vim.keymap.set("n", "<leader>h", "<C-w>h")
 vim.keymap.set("n", "<leader>l", "<C-w>l")
+-- keymap to toggle whether search highlights are on
+vim.keymap.set("n", "<leader>nh", "<cmd>set hlsearch!<CR>")
 
 -- keymap for commenting out lines of code using leader + / 
 vim.keymap.set("n", "<leader>/", "<cmd>CommentToggle<CR>")
 -- keymap for commenting out a visual selection using leader + c
 vim.keymap.set("v", "<leader>/", "<cmd>'<,'>CommentToggle<CR>")
+
+
+-- Git signs 
+-- next hunk
+vim.keymap.set("n", "<leader>]", "<cmd>lua require('gitsigns').next_hunk()<CR>")
+vim.keymap.set("n", "<leader>[", "<cmd>lua require('gitsigns').prev_hunk()<CR>")
+
+-- METALS (scala LSP)
+vim.keymap.set("n", "<leader>mo", "<cmd>lua require('telescope').extensions.metals.commands()<CR>")
+
+
 
