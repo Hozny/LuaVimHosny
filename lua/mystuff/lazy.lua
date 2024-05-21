@@ -111,8 +111,13 @@ return require('lazy').setup({
         }
     },
 
+    {
+        'pechorin/any-jump.vim'
+    },
+
     -------------- SCALA setup -----------------
     -- TODO: move remaps to remap.lua
+   --[[ 
     {
         "scalameta/nvim-metals",
         dependencies = {
@@ -261,6 +266,7 @@ return require('lazy').setup({
           })
         end
     },
+    --]]
 
     {
         "CopilotC-Nvim/CopilotChat.nvim",
